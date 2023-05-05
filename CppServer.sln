@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "App", "App\App.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{2D27DDBF-1F55-437E-AB60-0F6EF7C33D96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bat", "bat", "{889CC382-90E6-4FBD-8E08-5D6BD45BEF11}"
+	ProjectSection(SolutionItems) = preProject
+		vcpkgInit.bat = vcpkgInit.bat
+		vcpkgLibrary.bat = vcpkgLibrary.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
