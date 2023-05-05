@@ -1,21 +1,19 @@
-﻿#include "stdafx.h"
+﻿
+#include "stdafx.h"
 
+#pragma comment(lib, "Ws2_32.lib")
 
 int main()
 {
     setlocale(LC_ALL, "");
 
-    ThreadPool threadPool(L"testThread", 2);
+    SocketHelper::initSockets();
 
+    DNSEndPoint endPoint("www.naver.com", 80);
 
-    threadPool.queue([]() 
-        {
-            std::printf("test");
-        });
+    SocketAddress sockAddr = endPoint.serialize();
 
-    while (threadPool.getJobCount() != 0)
-    {
-        ::Sleep(1);
-    }
+    printf("%s\n", endPoint.getIPString().c_str());
 
+    SocketHelper::closeSockets();
 }

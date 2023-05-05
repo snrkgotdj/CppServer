@@ -15,6 +15,9 @@
     <Filter Include="Code\Thread">
       <UniqueIdentifier>{a6b764f8-5a57-483c-8097-2637a6c2a6a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Socket">
+      <UniqueIdentifier>{8b0fe5fc-cb20-44d6-8f5d-a6eeb3ac2d86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -26,6 +29,24 @@
     <ClInclude Include="Task.h">
       <Filter>Code\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="SocketHelper.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="IPEndPoint.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="IPAddress.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DNSEndPoint.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketAddress.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -36,6 +57,21 @@
     </ClCompile>
     <ClCompile Include="Task.cpp">
       <Filter>Code\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketHelper.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="IPEndPoint.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="IPAddress.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="DNSEndPoint.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketAddress.cpp">
+      <Filter>Code\Socket</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
