@@ -32,7 +32,7 @@ DNSEndPoint::DNSEndPoint(std::string_view host, int32_t port)
 			continue;
 		}
 
-		setAddress(pAddrin->sin_addr.s_addr);
+		setIP(pAddrin->sin_addr.s_addr);
 		setPort(port);
 		break;
 	}

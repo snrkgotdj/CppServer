@@ -1,27 +1,28 @@
 #pragma once
 
 #include "SocketAddress.h"
-#include "IPAddress.h"
 
 class IPEndPoint
 {
 private:
 	int64_t ip_ = 0;
 	AddressFamily addressFamily_ = AddressFamily::INET;
-	int port_;
+	int port_ = 0;
 
 public:
 	bool isValid();
 
 public:
-	void setAddress(int64_t address) { ip_ = address;}
+	void setIP(int64_t address) { ip_ = address;}
 	void setPort(int port) { port_ = port; }
 
 public:
+	SocketAddress serialize() const;
 	AddressFamily getAddressFamily() { return addressFamily_; }
-	SocketAddress serialize();
+	std::string getIPString();
 
 public:
-	std::string getIPString();
+	IPEndPoint() = default;
+	IPEndPoint(int64_t ip, int port, AddressFamily addressFamily = AddressFamily::INET);
 };
 

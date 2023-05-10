@@ -145,27 +145,38 @@
   <ItemGroup>
     <ClInclude Include="DNSEndPoint.h" />
     <ClInclude Include="Enum.h" />
-    <ClInclude Include="IPAddress.h" />
+    <ClInclude Include="IocpOverlapped.h" />
+    <ClInclude Include="IPAddressUtils.h" />
     <ClInclude Include="IPEndPoint.h" />
+    <ClInclude Include="NetSocket.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Protocol.h" />
     <ClInclude Include="SocketAddress.h" />
     <ClInclude Include="SocketHelper.h" />
+    <ClInclude Include="SocketOwner.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="TCPListener.h" />
     <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="TypeDefine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DNSEndPoint.cpp" />
-    <ClCompile Include="IPAddress.cpp" />
+    <ClCompile Include="IocpOverlapped.cpp" />
+    <ClCompile Include="IPAddressUtils.cpp" />
     <ClCompile Include="IPEndPoint.cpp" />
+    <ClCompile Include="NetSocket.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Protocol.cpp" />
     <ClCompile Include="SocketAddress.cpp" />
     <ClCompile Include="SocketHelper.cpp" />
+    <ClCompile Include="SocketOwner.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TCPListener.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -35,9 +35,6 @@
     <ClInclude Include="IPEndPoint.h">
       <Filter>Code\Socket</Filter>
     </ClInclude>
-    <ClInclude Include="IPAddress.h">
-      <Filter>Code\Socket</Filter>
-    </ClInclude>
     <ClInclude Include="Enum.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -45,6 +42,27 @@
       <Filter>Code\Socket</Filter>
     </ClInclude>
     <ClInclude Include="SocketAddress.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPListener.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="IPAddressUtils.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="NetSocket.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketOwner.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.h">
+      <Filter>Code\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpOverlapped.h">
       <Filter>Code\Socket</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,13 +82,28 @@
     <ClCompile Include="IPEndPoint.cpp">
       <Filter>Code\Socket</Filter>
     </ClCompile>
-    <ClCompile Include="IPAddress.cpp">
-      <Filter>Code\Socket</Filter>
-    </ClCompile>
     <ClCompile Include="DNSEndPoint.cpp">
       <Filter>Code\Socket</Filter>
     </ClCompile>
     <ClCompile Include="SocketAddress.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPListener.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="IPAddressUtils.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="NetSocket.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketOwner.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Protocol.cpp">
+      <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="IocpOverlapped.cpp">
       <Filter>Code\Socket</Filter>
     </ClCompile>
   </ItemGroup>

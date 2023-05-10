@@ -1,7 +1,10 @@
 ﻿
 #include "stdafx.h"
 
+#include "IPAddressUtils.h"
+
 #pragma comment(lib, "Ws2_32.lib")
+#pragma comment(lib, "Mswsock")
 
 int main()
 {
@@ -9,11 +12,17 @@ int main()
 
     SocketHelper::initSockets();
 
-    DNSEndPoint endPoint("www.naver.com", 80);
+    TCPListener listener;
+    listener.init(IPEndPoint(IPAddressUtils::parse("0.0.0.0"), 30000));
+    
+    listener.start();
 
-    SocketAddress sockAddr = endPoint.serialize();
 
-    printf("%s\n", endPoint.getIPString().c_str());
+    while (true)
+    {
+        ::Sleep(1);
+    }
+
 
     SocketHelper::closeSockets();
 }

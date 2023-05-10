@@ -11,6 +11,7 @@ private:
 
 public:
 	size_t getJobCount();
+	size_t getThreadCount() { return threads_.size(); }
 
 public:
 	bool queue(const std::function<void()>& callback);

@@ -7,12 +7,18 @@
 
 #include <WS2tcpip.h>
 #include <iostream>
+#include <MSWSock.h>
 
 #include <string>
 #include <sstream>
 #include <thread>
 #include <functional>
 #include <vector>
+#include <list>
+#include <mutex>
+
+#include "Enum.h"
+#include "TypeDefine.h"
 
 static void PrintLastError()
 {

@@ -7,3 +7,11 @@ enum class AddressFamily
 	INET6 = AF_INET6,
 	MAX = AF_MAX,
 };
+
+enum class DeserializeResultType
+{
+	None,
+	Ok,
+	Wait,
+	Error,
+};

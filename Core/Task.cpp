@@ -16,3 +16,4 @@ void OverlappedTask::process()
 
 	callback_(numberOfBytesTransferred, pOverlapped);
 }
+

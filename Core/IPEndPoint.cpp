@@ -1,6 +1,14 @@
 #include "pch.h"
 #include "IPEndPoint.h"
 
+IPEndPoint::IPEndPoint(int64_t ip, int port, AddressFamily addressFamily)
+	: ip_(ip)
+	, port_(port)
+	, addressFamily_(addressFamily)
+{
+	
+}
+
 bool IPEndPoint::isValid()
 {
 	if (ip_ < 0)
@@ -12,7 +20,7 @@ bool IPEndPoint::isValid()
 	return true;
 }
 
-SocketAddress IPEndPoint::serialize()
+SocketAddress IPEndPoint::serialize() const
 {
 	return SocketAddress(ip_, addressFamily_, port_);
 }
