@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DateTime.h" />
     <ClInclude Include="DNSEndPoint.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="IocpOverlapped.h" />
@@ -157,9 +158,13 @@
     <ClInclude Include="Task.h" />
     <ClInclude Include="TCPListener.h" />
     <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="TimeInternal.h" />
+    <ClInclude Include="TimeSpan.h" />
+    <ClInclude Include="TimeZoneInfo.h" />
     <ClInclude Include="TypeDefine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="DNSEndPoint.cpp" />
     <ClCompile Include="IocpOverlapped.cpp" />
     <ClCompile Include="IPAddressUtils.cpp" />
@@ -178,6 +183,9 @@
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TCPListener.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="TimeInternal.cpp" />
+    <ClCompile Include="TimeSpan.cpp" />
+    <ClCompile Include="TimeZoneInfo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

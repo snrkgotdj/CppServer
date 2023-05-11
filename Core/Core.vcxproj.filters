@@ -18,6 +18,15 @@
     <Filter Include="Code\Socket">
       <UniqueIdentifier>{8b0fe5fc-cb20-44d6-8f5d-a6eeb3ac2d86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Core">
+      <UniqueIdentifier>{e9000b2a-c933-467f-a559-0f4095a667ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Core\Log">
+      <UniqueIdentifier>{7be20d6b-7090-4477-a6fd-a53e3c232435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Core\DateTime">
+      <UniqueIdentifier>{e8ecb89c-858b-4e33-ac5e-e3bce138fd2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -65,6 +74,18 @@
     <ClInclude Include="IocpOverlapped.h">
       <Filter>Code\Socket</Filter>
     </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeInternal.h">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeSpan.h">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeZoneInfo.h">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -105,6 +126,18 @@
     </ClCompile>
     <ClCompile Include="IocpOverlapped.cpp">
       <Filter>Code\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeInternal.cpp">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeSpan.cpp">
+      <Filter>Code\Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeZoneInfo.cpp">
+      <Filter>Code\Core\DateTime</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
