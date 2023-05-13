@@ -86,6 +86,9 @@
     <ClInclude Include="TimeZoneInfo.h">
       <Filter>Code\Core\DateTime</Filter>
     </ClInclude>
+    <ClInclude Include="ThreadUtils.h">
+      <Filter>Code\Thread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -138,6 +141,9 @@
     </ClCompile>
     <ClCompile Include="TimeZoneInfo.cpp">
       <Filter>Code\Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadUtils.cpp">
+      <Filter>Code\Thread</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

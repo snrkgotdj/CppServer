@@ -1,13 +1,30 @@
 #pragma once
+
+#include "ThreadUtils.h"
+
 class ThreadPool
 {
 	using OverlappedCallback = const std::function<void(DWORD, LPOVERLAPPED)>;
 
+	struct ThreadPair
+	{
+		std::stop_source stopSource;
+		std::shared_ptr<std::thread> pThread;
+	};
+
 private:
-	HANDLE iocp_;
+	HANDLE iocp_ = NULL;
+	ThreadType threadType_ = ThreadType::NONE;
 	std::wstring name_;
-	std::vector<std::shared_ptr<std::thread>> threads_;
+	std::vector<ThreadPair> threads_;
 	size_t jobCount_ = 0;
+	ULONG32 fetchCount_ = 0;
+
+public:
+	bool init(std::wstring_view name, ThreadType threadType, size_t concurrent);
+
+public:
+	bool isValid() { return iocp_ != NULL; }
 
 public:
 	size_t getJobCount();
@@ -22,8 +39,8 @@ private:
 	void close();
 
 public:
-	ThreadPool() = delete;
-	ThreadPool(std::wstring_view name, size_t concurrent);
+	ThreadPool() = default;
+	ThreadPool(std::wstring_view name, ThreadType threadType, size_t concurrent);
 	~ThreadPool();
 };
 
