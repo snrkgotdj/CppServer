@@ -158,6 +158,7 @@
     <ClInclude Include="Task.h" />
     <ClInclude Include="TCPListener.h" />
     <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="ThreadUtils.h" />
     <ClInclude Include="TimeInternal.h" />
     <ClInclude Include="TimeSpan.h" />
     <ClInclude Include="TimeZoneInfo.h" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TCPListener.cpp" />
     <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="ThreadUtils.cpp" />
     <ClCompile Include="TimeInternal.cpp" />
     <ClCompile Include="TimeSpan.cpp" />
     <ClCompile Include="TimeZoneInfo.cpp" />

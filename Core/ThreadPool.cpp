@@ -9,30 +9,42 @@ enum class FunctionType
 	FT_CALLBACK = -1,
 };
 
-ThreadPool::ThreadPool(std::wstring_view name, size_t concurrent)
-	:iocp_(nullptr)
+ThreadPool::ThreadPool(std::wstring_view name, ThreadType threadType, size_t concurrent)
 {
-	if (concurrent == 0 || concurrent > 8)
-	{
-		concurrent = 8;
-	}
-
-	name_ = name;
-
-	iocp_ = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
-	if (iocp_ == NULL)
-		return;
-
-	for (size_t i = 0; i < concurrent; ++i)
-	{
-		std::shared_ptr<std::thread> pThread = std::make_shared<std::thread>(&ThreadPool::threadFunc, this, i);
-		threads_.push_back(pThread);
-	}
+	init(name, threadType, concurrent);
 }
 
 ThreadPool::~ThreadPool()
 {
 	close();
+}
+
+bool ThreadPool::init(std::wstring_view name, ThreadType threadType, size_t concurrent)
+{
+	if (isValid())
+		return false;
+
+	if (512 < concurrent)
+	{
+		concurrent = std::thread::hardware_concurrency();
+	}
+
+	name_ = name;
+	threadType_ = threadType;
+
+	iocp_ = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 0);
+	if (iocp_ == NULL)
+		return;
+
+	threads_.resize(concurrent);
+
+	for (size_t n = 0; n < concurrent; ++n)
+	{
+		std::shared_ptr<std::thread> thread = std::make_shared<std::thread>(&ThreadPool::threadFunc, this, n);
+		threads_[n] = ThreadPair(std::stop_source(), thread);
+	}
+
+	return true;
 }
 
 size_t ThreadPool::getJobCount()
@@ -137,12 +149,20 @@ void ThreadPool::threadFunc(ThreadPool* pPool, size_t index)
 
 void ThreadPool::close()
 {
-	if (iocp_ == nullptr)
+	if (isValid() == false)
 		return;
 
 	for (size_t i = 0; i < threads_.size(); ++i)
 	{
 		::PostQueuedCompletionStatus(iocp_, static_cast<DWORD>(FunctionType::FT_TERMINATE), 0, nullptr);
+		while (true)
+		{
+			size_t terminateCount = i + 1;
+			for (size_t j = 0; j < threads_.size(); ++j)
+			{
+
+			}
+		}
 	}
 
 	for (size_t i = 0; i < threads_.size(); ++i)
