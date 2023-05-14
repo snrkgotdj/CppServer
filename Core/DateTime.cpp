@@ -165,11 +165,8 @@ DateTime DateTime::kstNow()
 DateTime DateTime::now()
 {
     if (nullptr == nowFunc_)
-    {
-        assert(0); // DateTime::init을 호출하고 쓸것
         return kstNow();
-    }
-
+    
     return nowFunc_();
 }
 

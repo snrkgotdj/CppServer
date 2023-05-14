@@ -54,7 +54,7 @@ bool TCPListener::init(const IPEndPoint& endPoint)
 
 	if (pThreadPool_ == nullptr)
 	{
-		pThreadPool_ = new ThreadPool(L"TCPListener", std::thread::hardware_concurrency() * 2);
+		pThreadPool_ = new ThreadPool(L"TCPListener", ThreadType::NETWORK, std::thread::hardware_concurrency() * 2);
 	}
 
 	bool ret = pThreadPool_->bind((HANDLE)listenSocket_, &TCPListener::onAccept);

@@ -4,12 +4,19 @@
 
 class ThreadPool
 {
-	using OverlappedCallback = const std::function<void(DWORD, LPOVERLAPPED)>;
+	typedef void(__stdcall* OverlappedCallback)(DWORD, LPOVERLAPPED);
 
 	struct ThreadPair
 	{
 		std::stop_source stopSource;
 		std::shared_ptr<std::thread> pThread;
+	};
+
+	enum class Execute_ReturnType
+	{
+		OK = 0,
+		Empty = 1,
+		Terminate = 2
 	};
 
 private:
@@ -18,7 +25,7 @@ private:
 	std::wstring name_;
 	std::vector<ThreadPair> threads_;
 	size_t jobCount_ = 0;
-	ULONG32 fetchCount_ = 0;
+	ULONG32 fetchCount_ = 128;
 
 public:
 	bool init(std::wstring_view name, ThreadType threadType, size_t concurrent);
@@ -36,6 +43,7 @@ public:
 
 private:
 	static void threadFunc(ThreadPool* pPool, size_t index);
+	Execute_ReturnType execute(DWORD timeout = INFINITE);
 	void close();
 
 public:

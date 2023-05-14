@@ -89,6 +89,9 @@
     <ClInclude Include="ThreadUtils.h">
       <Filter>Code\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>Code\Core\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -144,6 +147,9 @@
     </ClCompile>
     <ClCompile Include="ThreadUtils.cpp">
       <Filter>Code\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>Code\Core\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,7 +10,11 @@ enum class ThreadType
 	LOGIC,
 };
 
-class ThreadUtils
+namespace ThreadUtils
 {
-};
+	bool isEqualThread(ThreadType threadType);
 
+	bool setThreadType(ThreadType threadType);
+
+	uint64_t getCurrentThreadId();
+}

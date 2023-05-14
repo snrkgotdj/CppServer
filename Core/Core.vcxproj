@@ -149,6 +149,7 @@
     <ClInclude Include="IocpOverlapped.h" />
     <ClInclude Include="IPAddressUtils.h" />
     <ClInclude Include="IPEndPoint.h" />
+    <ClInclude Include="LogManager.h" />
     <ClInclude Include="NetSocket.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Protocol.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="IocpOverlapped.cpp" />
     <ClCompile Include="IPAddressUtils.cpp" />
     <ClCompile Include="IPEndPoint.cpp" />
+    <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="NetSocket.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
