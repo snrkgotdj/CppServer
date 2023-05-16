@@ -30,6 +30,7 @@ private:
 	Protocol* pProtocol_ = nullptr;
 	ReceiveOverlapped receiveOverlapped_ = this;
 	DisconnectOverlapped disconnectOverlapped_ = this;
+	DateTime lastRecvTime_;
 
 public:
 	static NetSocketPtr create(SocketOwner* pOwner);
@@ -50,6 +51,8 @@ public:
 	void setLocalEndPoint(IPEndPoint endPoint) { localEndPoint_ = endPoint; }
 	void setRemoteEndPoint(IPEndPoint endPoint) { remoteEndPoint_ = endPoint; }
 	void setProtocol(Protocol* pProtocol);
+	void setHandler(const std::function<void(std::shared_ptr<ProtocolContext>)>& recvHandler, const std::function<void(NetSocketPtr)>& closeHandler);
+	void setLastRecvTime() { lastRecvTime_ = DateTime::kstNow(); }
 
 public:
 	SOCKET getSocket() { return socket_; }

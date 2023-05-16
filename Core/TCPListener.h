@@ -24,7 +24,7 @@ private:
 	std::unordered_map<size_t, NetSocketPtr> connectionMap_;
 	
 public:
-	bool init(const IPEndPoint& endPoint);
+	bool init(const IPEndPoint& endPoint, const std::function<void(NetSocketPtr)>& acceptCallback);
 
 public:
 	bool start();

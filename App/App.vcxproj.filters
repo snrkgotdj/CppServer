@@ -13,15 +13,87 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{264a31ab-e732-4fd0-bc46-90b8f131584b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\ThreadHandler">
+      <UniqueIdentifier>{4ef5ed2d-765e-41fc-b58a-9fe88d7d40f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DBThread.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Dispatcher.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpServer.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerHandler.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHandlerBase.cpp">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHandlerLogin.cpp">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomHandler.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomManager.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHandlerPing.cpp">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHandlerAuth.cpp">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomThread.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DBThread.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Dispatcher.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpServer.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerHandler.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHandlerBase.h">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHandlerLogin.h">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomHandler.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomManager.h">
+      <Filter>Code</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHandlerPing.h">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHandlerAuth.h">
+      <Filter>Code\ThreadHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomThread.h">
+      <Filter>Code</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@
 #include <thread>
 #include <functional>
 #include <string>
+#include <shared_mutex>
 
 #include <TypeDefine.h>
 
@@ -22,3 +23,6 @@
 #include <DNSEndPoint.h>
 #include <TCPListener.h>
 #include <NetSocket.h>
+#include <Protocol.h>
+#include <DateTime.h>
+#include <LogManager.h>

@@ -39,6 +39,9 @@ public:
 	{
 
 	}
+
+	virtual ~ProtocolContext() = 0 {}
+
 }; using ProtocolContextPtr = std::shared_ptr<ProtocolContext>;
 
 class Protocol
@@ -94,10 +97,11 @@ public:
 
 public:
 	std::string_view getHeader(const std::string& key);
+	std::string_view getUri() { return uri_; }
 
 public:
 	HttpRequest() = default;
-};
+}; using HttpRequestPtr = std::shared_ptr<HttpRequest>;
 
 class HttpResponse : public ResponseProtocol
 {
@@ -120,7 +124,7 @@ public:
 	{
 
 	}
-};
+}; using HttpContextPtr = std::shared_ptr<HttpContext>;
 
 class HttpProtocol : public Protocol
 {

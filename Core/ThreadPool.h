@@ -4,6 +4,7 @@
 
 class ThreadPool
 {
+public:
 	typedef void(__stdcall* OverlappedCallback)(DWORD, LPOVERLAPPED);
 
 	struct ThreadPair
@@ -40,10 +41,10 @@ public:
 public:
 	bool queue(const std::function<void()>& callback);
 	bool bind(HANDLE handle, const OverlappedCallback& callback);
+	Execute_ReturnType execute(DWORD timeout = INFINITE);
 
 private:
 	static void threadFunc(ThreadPool* pPool, size_t index);
-	Execute_ReturnType execute(DWORD timeout = INFINITE);
 	void close();
 
 public:

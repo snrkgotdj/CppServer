@@ -14,7 +14,7 @@ TCPListener::~TCPListener()
 	}
 }
 
-bool TCPListener::init(const IPEndPoint& endPoint)
+bool TCPListener::init(const IPEndPoint& endPoint, const std::function<void(NetSocketPtr)>& acceptCallback)
 {
 	listenSocket_ = WSASocket((int32_t)AddressFamily::INET, SOCK_STREAM, IPPROTO_TCP, NULL, 0, WSA_FLAG_OVERLAPPED);
 	if (listenSocket_ == INVALID_SOCKET)
@@ -56,6 +56,8 @@ bool TCPListener::init(const IPEndPoint& endPoint)
 	{
 		pThreadPool_ = new ThreadPool(L"TCPListener", ThreadType::NETWORK, std::thread::hardware_concurrency() * 2);
 	}
+
+	acceptCallback_ = 
 
 	bool ret = pThreadPool_->bind((HANDLE)listenSocket_, &TCPListener::onAccept);
 	if (ret == false)

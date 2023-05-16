@@ -154,3 +154,9 @@ void NetSocket::setProtocol(Protocol* pProtocol)
 
 	pProtocol_ = pProtocol;
 }
+
+void NetSocket::setHandler(const std::function<void(std::shared_ptr<ProtocolContext>)>& recvHandler, const std::function<void(NetSocketPtr)>& closeHandler)
+{
+	recvHandler_ = recvHandler;
+	closeHandler_ = closeHandler;
+}

@@ -1,8 +1,6 @@
 ﻿
 #include "stdafx.h"
-
-#include "IPAddressUtils.h"
-#include "DateTime.h"
+#include "HttpServer.h"
 #include "LogManager.h"
 
 #pragma comment(lib, "Ws2_32.lib")
@@ -15,21 +13,20 @@ int main()
     LogManager::getInstance()->init("C:\\Users\\djHome\\Documents\\work\\CppServer\\x64\\", "Log", LOG_TYPE::LT_DEBUG);
     MY_LOG(LOG_TYPE::LT_INFO, "%s", "ServerStart");
 
-    SocketHelper::initSockets();
+    setlocale(LC_ALL, "");
 
-    TCPListener listener;
-    listener.init(IPEndPoint(IPAddressUtils::parse("0.0.0.0"), 30000));
-    
-    listener.start();
+    if (HttpServer::init() == false)
+        return -1;
 
-    std::string str = DateTime::kstNow().toString();
+    if (HttpServer::start() == false)
+        return -1;
 
-
-    while (true)
+    while (HttpServer::run())
     {
         ::Sleep(1);
     }
 
+    HttpServer::stop();
 
-    SocketHelper::closeSockets();
+    return 0;
 }
